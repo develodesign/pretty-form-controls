@@ -202,6 +202,8 @@
 				$el.data( 'prettyFormControl', new ClassToLoad( $el, options ) );
 		});
 
+		return this;
+
 	};
 
 })( jQuery );
