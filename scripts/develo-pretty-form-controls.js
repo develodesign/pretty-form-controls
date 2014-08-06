@@ -29,6 +29,10 @@
 		this.$input = this.$el.find( 'input' );
 		this.isChecked = this.$input.is( ':checked' );
 
+		// If checkbox is initially checked then make sure the active class is added to the element.
+		if( this.isChecked )
+			this.$el.addClass( this.options.activeClass );
+
 		this.setupBindings();
 	};
 
