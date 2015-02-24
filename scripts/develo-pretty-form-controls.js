@@ -15,7 +15,19 @@
 	 */
 	var PrettyFormCheckbox = function( $el, options ){
 
-		this.options = options;
+		this.options = $.extend( true, {
+
+			/**
+			 * Triggered on click event.
+			 *
+			 * @param status boolean
+			 *
+			 * @returns {boolean}
+			 */
+			onClick: function( status ){ return true }
+
+		}, options );
+
 		this.$el = $el;
 
 		this.initialize();
@@ -53,6 +65,7 @@
 
 		event.preventDefault();
 		this.toggleChecked();
+		this.options.onClick( this.isChecked );
 	};
 
 	/**
